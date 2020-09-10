@@ -24,11 +24,13 @@
                 event.preventDefault();
                 // generate the contact number value
                 this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('service_v36gzbv', 'template_w0sjv1k', this)    .then(function(response) {
+                emailjs.sendForm('service_v36gzbv', 'template_w0sjv1k', this)
+		        .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);
     }, function(error) {
        console.log('FAILED...', error);
     });
+            });
         }
     </script>
     </script>
