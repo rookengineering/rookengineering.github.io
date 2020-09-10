@@ -12,16 +12,19 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
-                      (function(){
-                       emailjs.init('user_bn3Lt1mjByuuLFlmA5mIx');
-                       })();
-                window.onload = function() {
-                 document.getElementById('contact-form').addEventListener('submit', function(event) {
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+           emailjs.init('service_f1tlp5o');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
                 // generate the contact number value
                 this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.send('service_f1tlp5o', 'template_w0sjv1k', templateParams)
+                emailjs.sendForm('contact_service', 'contact_form', this);
             });
         }
     </script>
@@ -116,16 +119,16 @@
 					<section>
 						<h2>Orci malesuada</h2>
 						<p>Morbi pharetra vitae felis placerat pharetra. Nulla risus orci, dapibus id malesuada et nec, malesuada quis pellentesque eget.</p>
-						  <form id="contact-form">
-                                                  <input type="hidden" name="contact_number">
-                                                  <label>Name</label>
-                                                  <input type="text" name="user_name">
-                                                  <label>Email</label>
-                                                  <input type="email" name="user_email">
-                                                  <label>Message</label>
-                                                  <textarea name="message"></textarea>
-                                                  <input type="submit" value="Send">
-                                                  </form>
+						<form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" name="user_email">
+        <label>Message</label>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Send">
+    </form>
 					</section>
 					<section>
 						<ul class="contact">
